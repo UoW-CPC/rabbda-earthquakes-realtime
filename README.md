@@ -113,6 +113,9 @@ The steps to store these data to HDFS are the following:
  #### Activity Diagram
  
  ## Results
+ ### Python
+ ### Flume
+ ### Ambari
  
  
  
