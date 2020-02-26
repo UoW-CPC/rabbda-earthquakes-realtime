@@ -8,7 +8,7 @@ class Store:
         cls.createFolder()
         cls.createFile()
         count = 0
-        with open('../data/earhquakes.csv', 'a') as writer:
+        with open('../data/earthquakes.csv', 'a') as writer:
             for eq in eq_list:
                 count = count + 1
                 eq_str = ",".join(eq)
