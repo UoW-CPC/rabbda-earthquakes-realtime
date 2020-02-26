@@ -7,11 +7,13 @@ class Store:
     def toFile(cls, eq_list):
         cls.createFolder()
         cls.createFile()
+        count = 0
         with open('../data/earhquakes.csv', 'a') as writer:
             for eq in eq_list:
+                count = count + 1
                 eq_str = ",".join(eq)
                 writer.write("%s\r\n" % (eq_str))
-            print ("Data successfully stored to file")
+            print "Data successfully stored to file, records: ",count
 
     @classmethod
     def createFile(cls):

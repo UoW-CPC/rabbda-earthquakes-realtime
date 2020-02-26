@@ -12,7 +12,7 @@ def main():
         period = int(sys.argv[1])
         print "Period parameter passed: ",period
     except:
-        period = 10
+        period = 100
         print "No period parameter passed, period default value ",period
     end = datetime.utcnow() - timedelta(minutes=10)
     beginning = end - timedelta(minutes=period)
