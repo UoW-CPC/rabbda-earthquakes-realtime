@@ -11,7 +11,7 @@ class Store:
             for eq in eq_list:
                 eq_str = ",".join(eq)
                 writer.write("%s\r\n" % (eq_str))
-            print ("Successfully stored to file")
+            print ("Data successfully stored to file")
 
     @classmethod
     def createFile(cls):
