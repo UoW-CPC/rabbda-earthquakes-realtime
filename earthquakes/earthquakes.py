@@ -3,10 +3,11 @@ from datetime import datetime,timedelta
 
 from acquisition import Acquisition
 from preprocessing import Preprocessing
+from store import Store
 
 def main():
-    period = 1
-    now = datetime.utcnow()
+    period = 60
+    now = datetime.utcnow() -timedelta(minutes=60)
     start = now - timedelta(minutes=period)
     while True:
         print now
@@ -16,6 +17,7 @@ def main():
         eq_list = Preprocessing.splitDateTime(eq_list_temp)
         for eq in eq_list:
             print(eq)
+        Store.toFile(eq_list)
         time.sleep(period*60)
         now = datetime.utcnow()
         start = now - timedelta(minutes=period)

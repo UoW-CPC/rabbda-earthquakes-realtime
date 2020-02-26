@@ -16,7 +16,6 @@ class Preprocessing:
     def splitDateTime(cls, eq_list_temp):
         eq_list = []
         for eq in eq_list_temp:
-            print eq
             eq_temp = eq
             eq_str = "".join(eq)
             eq_year = eq_str[0:4]
