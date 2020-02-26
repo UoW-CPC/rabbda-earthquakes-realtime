@@ -41,12 +41,17 @@ The steps to store these data to HDFS are the following:
  * _flume-earthquakes-realtime.conf_, file used by Flume service to perform step 4 mentioned in the introduction paragraph.
  * _README.md_, project description file.
  
+ #### Requirements installation
+ 
  At this phase __install the requirements__ by running the command:
  
  ```
  pip install -r requirements.txt
  ```
- Having done that you can now __run the python application__. 
+ 
+ #### Run the Python application
+ 
+ Having install the requirements you can now __run the python application__. 
  
  Move to the earthquakes folder:
  ```
@@ -60,24 +65,28 @@ The steps to store these data to HDFS are the following:
   ```
  Python earthquakes.py 2
  ```
- With this we have a request every 2 minutes.
+ Now we have a request every 2 minutes.
  
- To see the results open a new terminal and move to the repository directory. There, you can see a data directory. If you move into this folder, there is a file earthquakes.csv.
+ To see the results open a new terminal and move to the repository directory. There, you can see a new directory, _data_. If you move into this folder, there is a file called _earthquakes.csv_.
  
  To see its content run the following command:
    ```
  cat earthquakes.csv
  ```
- Alternatively, you can watch file changes with the command:
+ Alternatively, you can monitor file changes with the command:
  ```
  tail -F earthquakes.csv
  ```
  
- At this point we have temporary stored the data in the local machine. Now, its time to upload those data to HDFS. To do so, we use the [Flume service](https://flume.apache.org/).
+ At this point, we have temporary stored the data in the local machine.
+ 
+ #### Run the Flume Agent
+  
+ Now, its time to upload those data to HDFS. To do so, we use the [Flume service](https://flume.apache.org/).
  Open a new terminal and move once again to the rabbda-earthquakes-realtime directory.
  
- There we have to edit the flume-earthquakes-realtime.cof file.
- Specifically, you need to edit the  _eq.sources.r1.command_ and _eq.sinks.k1.hdfs.path_ to much the local environment.
+ There we have to edit the _flume-earthquakes-realtime.conf_ file.
+ Specifically, you need to edit the  _eq.sources.r1.command_ and _eq.sinks.k1.hdfs.path_ to match your local environment.
  
  
  Example: 
@@ -89,9 +98,21 @@ The steps to store these data to HDFS are the following:
  ```
  flume-ng agent --name eq --conf-file flume-earthquakes-realtime.conf
  ```
- Having done this, Flume agent starts monitor the earthquakes.csv file for changes and uploads the data to HDFS.
+ Having done this, Flume agent starts monitor the _earthquakes.csv_ file for changes and uploads the data to HDFS.
  
+ #### Verify the data in HDFS
  Finally, __go to Ambari Files View__ in the path specified previously and see the data sinking to HDFS in real-time.
  
  ## Architecture
+ 
+ #### Requirements
+ ##### Functional
+ ##### Non-Functional
+ #### Domain Model
+ #### Class Diagram
+ #### Activity Diagram
+ 
+ ## Results
+ 
+ 
  
