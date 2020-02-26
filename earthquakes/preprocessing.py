@@ -3,11 +3,11 @@
 class Preprocessing:
 
     @classmethod
-    def clean(cls,eq_list_raw):
+    def cleanHeaders(cls, eq_list_raw):
         eq_list_temp = []
         for eq in eq_list_raw:
             if 'time' in eq:
-                print "clear headers"
+                print "headers removed"
             else:
                 eq_list_temp.append(eq)
         return eq_list_temp

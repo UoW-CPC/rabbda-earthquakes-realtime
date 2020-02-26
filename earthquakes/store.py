@@ -1,23 +1,22 @@
 import os
 
+
 class Store:
 
     @classmethod
-    def toFile(cls,eq_list):
+    def toFile(cls, eq_list):
         cls.createFolder()
         cls.createFile()
         with open('../data/earhquakes.csv', 'a') as writer:
             for eq in eq_list:
                 eq_str = ",".join(eq)
                 writer.write("%s\r\n" % (eq_str))
-
+            print ("Successfully stored to file")
 
     @classmethod
     def createFile(cls):
         with open('../data/earhquakes.csv', 'w') as writer:
             writer.write("")
-
-
 
     @classmethod
     def createFolder(cls):
