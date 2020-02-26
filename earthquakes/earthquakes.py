@@ -1,3 +1,4 @@
+import sys
 import time
 from datetime import datetime, timedelta
 
@@ -7,8 +8,13 @@ from store import Store
 
 
 def main():
-    period = 60
-    end = datetime.utcnow() - timedelta(minutes=60)
+    try:
+        period = int(sys.argv[1])
+        print "Period parameter passed: ",period
+    except:
+        period = 100
+        print "No period parameter passed, period default value ",period
+    end = datetime.utcnow() - timedelta(minutes=10)
     beginning = end - timedelta(minutes=period)
     while True:
         print end
@@ -18,7 +24,7 @@ def main():
         eq_list = Preprocessing.splitDateTime(eq_list_temp)
         Store.toFile(eq_list)
         time.sleep(period * 60)
-        end = datetime.utcnow()
+        end = datetime.utcnow()  - timedelta(minutes=10)
         beginning = end - timedelta(minutes=period)
 
 
