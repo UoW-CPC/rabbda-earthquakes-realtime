@@ -17,7 +17,7 @@ class Store:
 
     @classmethod
     def createFile(cls):
-        with open('../data/earhquakes.csv', 'w') as writer:
+        with open('../data/earthquakes.csv', 'w') as writer:
             writer.write("")
 
     @classmethod
