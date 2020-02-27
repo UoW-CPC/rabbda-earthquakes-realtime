@@ -59,11 +59,11 @@ The steps to store these data to HDFS are the following:
  ```
  and execute the earthquakes script:
  ```
- Python earthquakes.py
+ python earthquakes.py
  ```
  By default the script makes a requests every 10 minutes. As an alternative you can pass a parameter to change this value. Example:
   ```
- Python earthquakes.py 2
+ python earthquakes.py 2
  ```
  Now we have a request every 2 minutes.
  
