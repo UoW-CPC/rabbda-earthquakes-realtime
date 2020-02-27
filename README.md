@@ -109,4 +109,4 @@ The steps to store these data to HDFS are the following:
 
 
 
-##[Demo video](https://drive.google.com/open?id=1cVJDfO616nggClPJWdOQ2HOVEvEpF7tF)
+[Demo video](https://drive.google.com/open?id=1cVJDfO616nggClPJWdOQ2HOVEvEpF7tF)
