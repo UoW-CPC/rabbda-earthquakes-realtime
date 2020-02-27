@@ -104,26 +104,10 @@ The steps to store these data to HDFS are the following:
  Finally, __go to Ambari Files View__ in the path specified previously and see the data sinking to HDFS in real-time.
  
  ## Architecture
- 
- #### Requirements Analysis
- 
- ##### Functional
- * FR1. The service must download earthquakes data.
- * FR2. The service must download data in real-time.
- * FR3. The service must pre-process the data.
- * FR4. The service must upload the data to Hadoop HDFS.
- * FR5. The data download interval must be customisable.
- 
- ##### Non-Functional
- * NFR1. The service must use the USGS Rest API.
- * NFR2. The service must use the Flume service to sink data to HDFS.
- * NFR3. The service must be developed in Python 2.7
- 
- #### Domain Model
- #### Class Diagram
- #### Activity Diagram
- 
- ## Results
+<img width="732" alt="architecture" src="https://user-images.githubusercontent.com/32298274/75445139-bebad500-595c-11ea-830f-9850fa0e7dd0.png">
+
+
+## Results
  ### Python
  ### Flume
  ### Ambari
