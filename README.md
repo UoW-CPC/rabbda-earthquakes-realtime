@@ -12,7 +12,7 @@ Sample request in csv format: [earthquakes](https://earthquake.usgs.gov/fdsnws/e
 
 The steps to store these data to HDFS are the following:
  1. Request the data from the Rest API.
- 2. Pre-process the data to remove headers and format date and time of the earthquakes.
+ 2. Pre-process the data to remove headers and format earthquakes date and time.
  3. Save the data temporary to the host machine.
  4. Upload the data to HDFS.
  
@@ -20,7 +20,7 @@ The steps to store these data to HDFS are the following:
  These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
  
  ### Download the repository
- The initial step is to download the repository in your local machine. To do so, run the following command:
+ The initial step is to download the repository in your Hadoop machine. To do so, run in terminal the following command:
  ```
  git clone https://github.com/UoW-CPC/rabbda-earthquakes-realtime.git
  ```
@@ -82,7 +82,7 @@ The steps to store these data to HDFS are the following:
  
  #### Run the Flume Agent
   
- Now, its time to upload those data to HDFS. To do so, we use the [Flume service](https://flume.apache.org/).
+ The next step is to upload those data to HDFS. To do so, we use the [Flume service](https://flume.apache.org/).
  Open a new terminal and move once again to the rabbda-earthquakes-realtime directory.
  
  There we have to edit the _flume-earthquakes-realtime.conf_ file.
@@ -94,11 +94,11 @@ The steps to store these data to HDFS are the following:
  eq.sources.r1.command = tail -F /home/user/rabbda-earthquakes-realtime/data/earthquakes.csv
  eq.sinks.k1.hdfs.path = hdfs://NameNode.Domain.com:8020/user/UserName/flume/realtime
  ```
- Now is time to __start the Flume agent__ and upload the data to HDFS.
+ Now is time to __start the Flume agent__ and upload the data to HDFS. Execute the command:
  ```
  flume-ng agent --name eq --conf-file flume-earthquakes-realtime.conf
  ```
- Having done this, Flume agent starts monitor the _earthquakes.csv_ file for changes and uploads the data to HDFS.
+ Having done this, Flume agent starts monitoring the _earthquakes.csv_ file for changes and uploads the data to HDFS.
  
  #### Verify the data in HDFS
  Finally, __go to Ambari Files View__ in the path specified previously and see the data sinking to HDFS in real-time.
@@ -107,7 +107,7 @@ The steps to store these data to HDFS are the following:
 <img width="732" alt="architecture" src="https://user-images.githubusercontent.com/32298274/75445139-bebad500-595c-11ea-830f-9850fa0e7dd0.png">
 
 
-## Results
+## Demo
  ### Python
  ### Flume
  ### Ambari
