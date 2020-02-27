@@ -105,9 +105,20 @@ The steps to store these data to HDFS are the following:
  
  ## Architecture
  
- #### Requirements
+ #### Requirements Analysis
+ 
  ##### Functional
+ * FR1. The service must download earthquakes data.
+ * FR2. The service must download data in real-time.
+ * FR3. The service must pre-process the data.
+ * FR4. The service must upload the data to Hadoop HDFS.
+ * FR5. The data download interval must be customisable.
+ 
  ##### Non-Functional
+ * NFR1. The service must use the USGS Rest API.
+ * NFR2. The service must use the Flume service to sink data to HDFS.
+ * NFR3. The service must be developed in Python 2.7
+ 
  #### Domain Model
  #### Class Diagram
  #### Activity Diagram
