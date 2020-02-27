@@ -13,7 +13,7 @@ class Store:
                 count = count + 1
                 eq_str = ",".join(eq)
                 writer.write("%s\r\n" % (eq_str))
-            print "Data successfully stored to file, records: ",count
+            print "Data stored to file, records: ",count
 
     @classmethod
     def createFile(cls):
