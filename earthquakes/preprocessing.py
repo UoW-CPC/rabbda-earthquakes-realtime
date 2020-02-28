@@ -7,7 +7,7 @@ class Preprocessing:
         eq_list_temp = []
         for eq in eq_list_raw:
             if 'time' in eq:
-                print "response headers removed"
+                print ""
             else:
                 eq_list_temp.append(eq)
         return eq_list_temp

@@ -1,12 +1,11 @@
 import os
 
 
-class Store:
+class StoreData:
 
     @classmethod
     def toFile(cls, eq_list):
-        cls.createFolder()
-        cls.createFile()
+        cls.truncateFile()
         count = 0
         with open('../data/earthquakes.csv', 'a') as writer:
             for eq in eq_list:
@@ -16,7 +15,7 @@ class Store:
             print "Data stored to file, records: ",count
 
     @classmethod
-    def createFile(cls):
+    def truncateFile(cls):
         with open('../data/earthquakes.csv', 'w') as writer:
             writer.write("")
 
